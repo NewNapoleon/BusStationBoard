@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+/*居中*/
+.middle {
+  margin: 0 auto;
+}
+/*文字加粗*/
+.fontbold {
+  font-family: 黑体;
+  font-weight: bolder;
+}
+body {
+  background: #fff;
+  -webkit-text-size-adjust: none;
+}
+.stationContainer {
+  width: 950px;
+  margin: 0 auto;
+  background: #421AE6;
+}
+nav {
+  height: 150px;
+  width: 850px;
+  margin: 0 auto;
+  vertical-align: middle;
+  padding-bottom: 10px;
+}
+nav .logoContainer {
+  float: left;
+  display: inline-block;
+}
+nav .logoContainer .logo {
+  height: 150px;
+  width: 150px;
+  background: url("img/logo.png") no-repeat;
+  background-size: 150px 150px;
+}
+nav .stationnameContainer {
+  float: left;
+  display: inline-block;
+  width: 600px;
+  height: 150px;
+  margin-left: 50px;
+  text-align: center;
+}
+nav .stationnameContainer .stationName {
+  font-size: 55px;
+  font-family: 黑体;
+  font-weight: bolder;
+  color: #f8f8f8;
+  margin-top: 20px;
+}
+nav .stationnameContainer .englishName {
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  background: linear-gradient(to right, transparent, #8ec1ed);
+}
+nav .stationnameContainer .englishName .rightTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 15px solid #421AE6;
+  border-color: #421AE6 #421AE6 transparent transparent;
+}
+nav .stationnameContainer .englishName .rightbottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 15px solid #421AE6;
+  border-color: transparent #421AE6 #421AE6 transparent;
+}
+nav .stationnameContainer .englishName .text {
+  font-size: 28px;
+  font-family: 黑体;
+  font-weight: bolder;
+  color: #f8f8f8;
+  width: 550px;
+  margin: 0 auto;
+}
+article {
+  width: 900px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+article .buslineList .busline {
+  border: 10px solid #fff;
+  border-left: 0;
+  border-right: 0;
+  height: 150px;
+  margin-top: 10px;
+  position: relative;
+}
+article .buslineList .busline .buslineName {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background: #c24f4f;
+  font-size: 70px;
+  font-family: 黑体;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  color: #f8f8f8;
+  text-align: center;
+}
+article .buslineList .busline .buslineStopList {
+  float: left;
+  width: 600px;
+  height: 150px;
+}
+article .buslineList .busline .buslineStopList ul li {
+  float: left;
+  height: 148px;
+  padding-top: 2px;
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  font-family: 黑体;
+  font-weight: bolder;
+  color: #f8f8f8;
+}
+article .buslineList .busline .buslineStopList ul li.past {
+  background: #c24f4f;
+}
+article .buslineList .busline .buslineStopList ul li.now {
+  background: #e19783;
+}
+article .buslineList .busline .buslineStopList ul li.now::after {
+  content: ' ';
+  display: inline-block;
+  margin-top: 33px;
+  width: 10px;
+  height: 10px;
+  background: url("img/nowicon.png");
+}
+article .buslineList .busline .buslineStopList ul li.future {
+  background: transparent;
+}
+article .buslineList .busline .buslineTime {
+  float: left;
+  margin-left: 5px;
+  font-size: 14px;
+  padding-top: 2px;
+  font-family: 黑体;
+  font-weight: bolder;
+  color: #f8f8f8;
+}
+article .buslineList .busline .direction {
+  position: absolute;
+  width: 850px;
+  left: 50px;
+  bottom: 5px;
+  font-size: 14px;
+  font-family: 黑体;
+  font-weight: bolder;
+}
+article .buslineList .busline .direction .start {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  background: #f8f8f8;
+  float: left;
+  text-align: center;
+  color: #421AE6;
+}
+article .buslineList .busline .direction .start .rightTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid #c24f4f;
+  border-color: #c24f4f #c24f4f transparent transparent;
+}
+article .buslineList .busline .direction .start .rightbottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid #c24f4f;
+  border-color: transparent #c24f4f #c24f4f transparent;
+}
+article .buslineList .busline .direction .line {
+  float: left;
+  width: 600px;
+  height: 0px;
+  border-top: 1px solid #f8f8f8;
+  margin-top: 10px;
+}
+article .buslineList .busline .direction .dest {
+  float: left;
+  color: #f8f8f8;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+article .buslineList .busline .direction .dest .desticon {
+  display: block;
+  float: left;
+  width: 15px;
+  height: 20px;
+  background: url("img/nowicon.png") 0 center no-repeat;
+  background-size: 15px 15px;
+}
+article .buslineList .busline .direction .dest .text {
+  display: inline-block;
+  margin-left: 5px;
+}

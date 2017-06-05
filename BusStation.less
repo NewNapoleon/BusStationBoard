@@ -1,0 +1,237 @@
+//初始化
+*{
+  margin: 0;
+  padding: 0;
+}
+
+ul li{
+  list-style: none;
+}
+
+//变量声明
+@fff:#fff;
+@f8:#f8f8f8;
+@backcolor:#421AE6;
+@arrowcolor:#8ec1ed;
+@red:#c24f4f;
+@yellow:#e19783;
+//函数声明
+
+/*居中*/
+.middle{
+  margin: 0 auto;
+}
+/*文字加粗*/
+.fontbold{
+  font-family: 黑体;
+  font-weight: bolder;
+}
+//样式
+body{
+  background: @fff;
+  -webkit-text-size-adjust: none;
+}
+
+.stationContainer{
+  width: 950px;
+  .middle;
+  background: @backcolor;
+}
+
+//公交站名
+nav{
+  height: 150px;
+  width: 850px;
+  .middle;
+  vertical-align:middle;
+  padding-bottom: 10px;
+  .logoContainer{
+    float: left;
+    display: inline-block;
+    .logo{
+      height: 150px;
+      width: 150px;
+      background: url("./img/logo.png") no-repeat;
+      background-size: 150px 150px;
+    }
+  }
+  .stationnameContainer{
+    float: left;
+    display: inline-block;
+    width: 600px;
+    height: 150px;
+    margin-left: 50px;
+    text-align: center;
+    .stationName{
+      font-size: 55px;
+      .fontbold;
+      color: @f8;
+      margin-top: 20px;
+    }
+    .englishName{
+      position: relative;
+      height: 60px;
+      line-height: 60px;
+      background: linear-gradient(to right,transparent,@arrowcolor);
+      .rightTop{
+        .rightTop(15px,@backcolor);
+      }
+      .rightbottom{
+        .rightbottom(15px,@backcolor);
+      }
+      .text{
+        font-size: 28px;
+        .fontbold;
+        color: @f8;
+        width: 550px;
+        .middle;
+      }
+    }
+  }
+}
+
+//主体部分
+article{
+  width: 900px;
+  .middle;
+  .buslineList
+  {
+    .busline{
+      border: 10px solid @fff;
+      border-left: 0;
+      border-right: 0;
+      height: 150px;
+      margin-top: 10px;
+      position:relative;
+      .buslineName{
+        float: left;
+        width:150px;
+        height: 150px;
+        background: @red;
+        font-size: 70px;
+        .fontbold;
+        letter-spacing: 3px;
+        color: @f8;
+        text-align: center;
+      }
+      .buslineStopList{
+        float: left;
+        width:600px;
+        height: 150px;
+        ul{
+          li{
+            float: left;
+            height: 148px;
+            padding-top: 2px;
+            writing-mode: vertical-rl;
+            font-size:12px;
+            .fontbold;
+            color: @f8;
+            &.past{
+              background: @red;
+            }
+            &.now{
+              background: @yellow;
+              &::after{
+                content: ' ';
+                display: inline-block;
+                margin-top: 33px;
+                width: 10px;
+                height: 10px;
+                background: url("./img/nowicon.png");
+              }
+            }
+            &.future{
+              background: transparent;
+            }
+          }
+        }
+      }
+      .buslineTime{
+        float: left;
+        margin-left:5px;
+        font-size:14px;
+        padding-top: 2px;
+        .fontbold;
+        color: @f8;
+      }
+      .direction{
+        position:absolute;
+        width: 850px;
+        left: 50px;
+        bottom:5px;
+        font-size: 14px;
+        .fontbold;
+        .start{
+          width: 100px;
+          height: 20px;
+          line-height: 20px;
+          position:relative;
+          background: @f8;
+          float: left;
+          text-align: center;
+          color: @backcolor;
+          .rightTop{
+            .rightTop(5px,@red);
+          }
+          .rightbottom{
+            .rightbottom(5px,@red);
+          }
+        }
+        .line{
+          float: left;
+          width:600px;
+          height: 0px;
+          border-top: 1px solid @f8;
+          margin-top: 10px;
+        }
+        .dest{
+          float: left;
+          color: @f8;
+          height: 20px;
+          line-height: 20px;
+          //display: table-cell;
+          vertical-align: middle;
+          .desticon{
+            display: block;
+            float: left;
+            width: 15px;
+            height: 20px;
+            //line-height: 20px;
+            background: url("./img/nowicon.png") 0 center no-repeat;
+            background-size: 15px 15px;
+          }
+          .text{
+            display: inline-block;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  //为了底部不显得突兀
+  padding-bottom: 100px;
+}
+//
+
+//遮板样式，为了制作箭头
+.rightTop(@size,@color)
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border:  @size solid @color;
+  border-color: @color @color transparent transparent;
+}
+.rightbottom(@size,@color)
+{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border:  @size solid @color;
+  border-color: transparent @color @color transparent;
+}
